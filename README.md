@@ -1,4 +1,4 @@
-# functioninstallerforwin
+# Function Installer for Windows
 Contains scripts and files for retrofitting certain functions under windows
 
 # information on the folders listed here and their contents:
