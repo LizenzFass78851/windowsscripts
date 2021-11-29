@@ -2,8 +2,8 @@
 Contains scripts and files for retrofitting certain functions under windows
 
 # information on the folders listed here and their contents:
-  - Activate photo viewer under windows 10
-activates the hidden photo viewer under windows 10 and can be used as a standard app for pictures
+  - Activate photo viewer under windows 10 and windows 11
+activates the hidden photo viewer under windows 10 and windows 11 and can be used as a standard app for pictures
   
   - script for easy installation of  .cab updates
 put the script and the * .cab updates in the same directory and when executing the script, the * .cab updates will be installed in alphabetical order
