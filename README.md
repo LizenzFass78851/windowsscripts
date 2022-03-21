@@ -19,3 +19,6 @@ Requires: execution as TrustedInstaller
 adds certain functions for the home variant for windows.
 Note: To be on the safe side, perform a Windows backup prior to execution
 Warning: Scripts are only available in German operating language
+
+  - w11 modding
+small scripts or similar to easily customize windows 11. Updating of files not guaranteed
