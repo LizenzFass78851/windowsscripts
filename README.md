@@ -1,7 +1,7 @@
 # Function Installer for Windows
 Contains scripts and files for retrofitting certain functions under windows
 
-# information on the folders listed here and their contents:
+### information on the folders listed here and their contents:
   - Activate photo viewer under windows 10 and windows 11
 activates the hidden photo viewer under windows 10 and windows 11 and can be used as a standard app for pictures
   
