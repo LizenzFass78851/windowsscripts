@@ -1,3 +1,3 @@
-# Function Installer for Windows
+# windowsscripts
 Contains scripts and files for retrofitting certain functions under windows
 
