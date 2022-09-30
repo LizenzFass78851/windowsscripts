@@ -12,7 +12,7 @@ $EmailTo = "admin@example.com,second.admin@example.com"
 $Subject ="Alert From $MachineName"
 $Body = "EventID: $EventID`nSource: $Source`nMachineName: $MachineName `nMessage: $Message"
 
-$SMTPServer = "smtp.1und1.com"
+$SMTPServer = "smtp.1und1.de"
 $SMTPClient = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
 #$SMTPClient.EnableSsl = $true
 #$SMTPClient.Credentials = New-Object System.Net.NetworkCredential("events@example.com", "yoursmtppassword");
