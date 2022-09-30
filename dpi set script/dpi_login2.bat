@@ -36,7 +36,7 @@ REG ADD "HKCU\Control Panel\Desktop" /v DpiScalingVer /t REG_DWORD /d 0x00001018
 REG ADD "HKCU\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 0x00000001 /f
 REG ADD "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d 0x00000192 /f
 
-shutdown /l
+REM shutdown /l
 
 goto :exits
 
