@@ -1,2 +1,2 @@
-## script for easy installation of  .cab updates
+## Reset Custom Printsettings of CurrentUser
 - this script can be run as current user, it deletes the printer settings already defined by the user and sets them to driver default or to the standard values of the printer settings defined by the printer server (printer release)
