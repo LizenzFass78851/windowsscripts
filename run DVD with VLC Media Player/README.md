@@ -1,0 +1,2 @@
+## run DVD with VLC Media Player
+- This script starts VLC media player and starts DVD playback directly without first inserting the DVD into the playlist and starting it from there (one-click solution)
