@@ -14,3 +14,4 @@ Contains scripts and files for retrofitting certain functions under windows
 - [scripts for install .net framework of install-dvd](./scripts%20for%20install%20.net%20framework%20of%20install-dvd)
 - [scripts for retrofitting functions for windows home](./scripts%20for%20retrofitting%20functions%20for%20windows%20home)
 - [w11 modding](./w11%20modding)
+- [Windows Remote Assistance](./Windows%20Remote%20Assistance)
