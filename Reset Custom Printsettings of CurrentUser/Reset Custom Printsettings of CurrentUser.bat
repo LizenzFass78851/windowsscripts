@@ -1,7 +1,6 @@
 @echo off
 
-pushd "%CD%"
-CD /D "%~dp0"
+pushd "%CD%" && CD /D "%~dp0"
 
 TITLE Reset Custom Printsettings of CurrentUser
 

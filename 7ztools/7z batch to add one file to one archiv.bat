@@ -1,7 +1,6 @@
 @echo off
 
-pushd "%CD%"
-CD /D "%~dp0"
+pushd "%CD%" && CD /D "%~dp0"
 
 SET ZIPEXE=.\7z-bin\x86\7z.exe
 if %PROCESSOR_ARCHITECTURE%==AMD64 SET ZIPEXE=.\7z-bin\x64\7z.exe
