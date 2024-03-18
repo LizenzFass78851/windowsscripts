@@ -12,6 +12,4 @@ if exist "%SYSTEMROOT%\System32\Cscript.exe" (
 if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs"
 pushd "%CD%" && CD /D "%~dp0"
 cls
-(for %%a IN (*.msu) DO echo %%a && wusa %%a /quiet /norestart )
-pause
-exit
+cmd
