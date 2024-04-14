@@ -1,0 +1,28 @@
+<Configuration>
+  <Add OfficeClientEdition="32" Channel="PerpetualVL2024" SourcePath="C:\_install\Office_Installation_Folder\files" ForceUpgrade="TRUE">
+    <Product ID="ProPlus2024Volume" PIDKEY="#####-#####-#####-#####-#####">
+      <Language ID="de-de" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Bing" />
+      <!-- <ExcludeApp ID="Excel" /> -->
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <!-- <ExcludeApp ID="OneNote" /> -->
+      <!-- <ExcludeApp ID="Outlook" /> -->
+      <!-- <ExcludeApp ID="PowerPoint" /> -->
+      <!-- <ExcludeApp ID="Publisher" /> -->
+      <ExcludeApp ID="Teams" />
+      <!-- <ExcludeApp ID="Word" /> -->
+    </Product>
+    <Product ID="ProofingTools">
+      <Language ID="de-de" />
+      <Language ID="en-us" />
+    </Product>
+  </Add>
+  <RemoveMSI />
+  <Updates Enabled="TRUE" Channel="PerpetualVL2024" />
+  <Display Level="Full" AcceptEULA="TRUE"/>
+  <!-- <Property Name="AUTOACTIVATE" Value="1" /> -->
+  <Property Name="PinIconsToTaskbar" Value="FALSE" />
+</Configuration>
