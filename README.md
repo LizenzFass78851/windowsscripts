@@ -1,8 +1,10 @@
 # Windows Scripts
+
+
 Contains scripts and files for retrofitting certain functions under windows
 
-## Overview of the scripts and tools: 
-- [7z tools](./7ztools)
+## Overview of the scripts and tools:
+- [7ztools](./7ztools)
 - [Activate photo viewer under windows 10 and 11](./Activate%20photo%20viewer%20under%20windows%2010%20and%2011)
 - [alert mails as powershell script](./alert%20mails%20as%20powershell%20script)
 - [deny users scripts](./deny%20users%20scripts)
