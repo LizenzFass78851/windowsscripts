@@ -1,0 +1,3 @@
+[submodule "w11 modding/change_SvcHostSplitThresholdInKB"]
+	path = w11 modding/change_SvcHostSplitThresholdInKB
+	url = https://github.com/pabl1ku/SVCHOSTSPLITTHRESHOLDINKB
