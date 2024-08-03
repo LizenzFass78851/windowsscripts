@@ -1,6 +1,6 @@
 <Configuration>
-  <Add OfficeClientEdition="64" Channel="PerpetualVL2024" SourcePath="C:\_install\Office_Installation_Folder\files" ForceUpgrade="TRUE">
-    <Product ID="ProPlus2024Volume" PIDKEY="#####-#####-#####-#####-#####">
+  <Add OfficeClientEdition="32" Channel="PerpetualVL2024" SourcePath="C:\_install\Office_Installation_Folder\files" ForceUpgrade="TRUE">
+    <Product ID="Standard2024Volume" PIDKEY="#####-#####-#####-#####-#####">
       <Language ID="de-de" />
       <ExcludeApp ID="Access" />
       <ExcludeApp ID="Bing" />
