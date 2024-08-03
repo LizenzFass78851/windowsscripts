@@ -1,7 +1,7 @@
 ## Windows Remote Assistance
-- A possibility for Windows which is used as a terminal server with several users to help other users as an admin within the terminal server
+- A possibility for Windows which is used as a terminal server **or** another computer on internal network with several users to help other users as an admin
 
-Run the following as admin so that the corresponding window opens to select the user within the terminal server that you want to help
+Run the following as admin so that the corresponding window opens to set this ip or hostname for the target computer and select the user that you want to help
 
 ````
 %SYSTEMROOT%\SYSTEM32\msra.exe /offerra
