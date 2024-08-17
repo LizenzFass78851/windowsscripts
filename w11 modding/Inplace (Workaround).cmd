@@ -4,6 +4,9 @@ pushd "%CD%" && CD /D "%~dp0"
 
 TITLE Inplace (Workaround)
 
+echo This workaround is not working on Windows 11 25H2 and newer.
+echo On Windows 11 24H2 and below still works the workaround
+timeout 10
 
 if exist .\sources\setupprep.exe goto :RUN1
 goto :ERROR
