@@ -13,7 +13,6 @@ Contains scripts and files for retrofitting certain functions under windows
 - [Email signature script for Outlook](./Email%20signature%20script%20for%20Outlook)
 - [get admin script](./get%20admin%20script)
 - [Microsoft easy fix](./Microsoft%20easy%20fix)
-- [mysql scripts](./mysql%20scripts)
 - [Office Tools and Scripts](./Office%20Tools%20and%20Scripts)
 - [Reset Custom Printsettings of CurrentUser](./Reset%20Custom%20Printsettings%20of%20CurrentUser)
 - [run DVD with VLC Media Player](./run%20DVD%20with%20VLC%20Media%20Player)
