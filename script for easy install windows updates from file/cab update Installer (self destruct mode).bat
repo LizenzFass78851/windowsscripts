@@ -24,7 +24,4 @@ shutdown /r /t 10 /f
 REM shutdown /s /t 10 /f
 
 
-del "cab update Installer (self destruct mode).bat"
-
-timeout 5
-exit
+del "cab update Installer (self destruct mode).bat" && timeout 5 && exit
