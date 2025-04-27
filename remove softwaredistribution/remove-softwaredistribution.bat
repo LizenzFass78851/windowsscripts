@@ -18,30 +18,30 @@ cls
 Title remove softwaredistribution
 
 :stop-services
-echo try to stop some windows update services
+echo [SCRIPT] Trying to stop some Windows Update services
 for %%S in (wuauserv cryptSvc bits msiserver) do (
     sc query %%S | find "RUNNING" >nul && (
-        net stop %%S || echo failed to stop %%S && goto start-services
-    ) || echo %%S is not running, skipping
+        net stop %%S || echo [SCRIPT] Failed to stop %%S && goto start-services
+    ) || echo [SCRIPT] %%S is not running, skipping
 )
 
 :remove-softwaredistribution
-echo try to remove some windows update folders
-rd /S /Q %systemroot%\SoftwareDistribution && rd /S /Q %systemroot%\System32\catroot2 || echo failed to remove folders
+echo [SCRIPT] Trying to remove some Windows Update folders
+rd /S /Q %systemroot%\SoftwareDistribution && rd /S /Q %systemroot%\System32\catroot2 || echo [SCRIPT] Failed to remove folders
 
 :start-services
-echo try to start some windows update services
+echo [SCRIPT] Trying to start some Windows Update services
 for %%S in (wuauserv cryptSvc bits msiserver) do (
-    sc query %%S | find "RUNNING" >nul && echo %%S is already running, skipping || (
-        net start %%S || echo failed to start %%S
+    sc query %%S | find "RUNNING" >nul && echo [SCRIPT] %%S is already running, skipping || (
+        net start %%S || echo [SCRIPT] Failed to start %%S
     )
 )
 
 :reset-authorization
-echo try to reset windows update authorization
+echo [SCRIPT] Trying to reset Windows Update authorization
 wuauclt /resetauthorization
 
 :exits
-echo done
+echo [SCRIPT] Done
 timeout 5
 exit
