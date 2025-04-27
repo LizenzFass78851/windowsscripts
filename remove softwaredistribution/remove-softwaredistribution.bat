@@ -19,10 +19,11 @@ Title remove softwaredistribution
 
 :stop-services
 echo try to stop some windows update services
-net stop wuauserv  || echo failed to stop wuauserv  && goto start-services
-net stop cryptSvc  || echo failed to stop cryptSvc  && goto start-services
-net stop bits      || echo failed to stop bits      && goto start-services
-net stop msiserver || echo failed to stop msiserver && goto start-services
+for %%S in (wuauserv cryptSvc bits msiserver) do (
+    sc query %%S | find "RUNNING" >nul && (
+        net stop %%S || echo failed to stop %%S && goto start-services
+    ) || echo %%S is not running, skipping
+)
 
 :remove-softwaredistribution
 echo try to remove some windows update folders
@@ -30,10 +31,11 @@ rd /S /Q %systemroot%\SoftwareDistribution && rd /S /Q %systemroot%\System32\cat
 
 :start-services
 echo try to start some windows update services
-net start wuauserv
-net start cryptSvc
-net start bits
-net start msiserver
+for %%S in (wuauserv cryptSvc bits msiserver) do (
+    sc query %%S | find "RUNNING" >nul && echo %%S is already running, skipping || (
+        net start %%S || echo failed to start %%S
+    )
+)
 
 :reset-authorization
 echo try to reset windows update authorization
