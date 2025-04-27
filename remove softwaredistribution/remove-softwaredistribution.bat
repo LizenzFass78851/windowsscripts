@@ -16,9 +16,12 @@ pushd "%CD%" && CD /D "%~dp0"
 cls
 
 Title remove softwaredistribution
+SET LINE===================================================
 
 :stop-services
+echo %LINE%
 echo [SCRIPT] Trying to stop some Windows Update services
+echo %LINE%
 for %%S in (wuauserv cryptSvc bits msiserver) do (
     sc query %%S | find "RUNNING" >nul && (
         net stop %%S || echo [SCRIPT] Failed to stop %%S && goto start-services
@@ -26,11 +29,15 @@ for %%S in (wuauserv cryptSvc bits msiserver) do (
 )
 
 :remove-softwaredistribution
+echo %LINE%
 echo [SCRIPT] Trying to remove some Windows Update folders
+echo %LINE%
 rd /S /Q %systemroot%\SoftwareDistribution && rd /S /Q %systemroot%\System32\catroot2 || echo [SCRIPT] Failed to remove folders
 
 :start-services
+echo %LINE%
 echo [SCRIPT] Trying to start some Windows Update services
+echo %LINE%
 for %%S in (wuauserv cryptSvc bits msiserver) do (
     sc query %%S | find "RUNNING" >nul && echo [SCRIPT] %%S is already running, skipping || (
         net start %%S || echo [SCRIPT] Failed to start %%S
@@ -38,10 +45,12 @@ for %%S in (wuauserv cryptSvc bits msiserver) do (
 )
 
 :reset-authorization
+echo %LINE%
 echo [SCRIPT] Trying to reset Windows Update authorization
+echo %LINE%
 wuauclt /resetauthorization
 
 :exits
 echo [SCRIPT] Done
-timeout 5
+timeout 10
 exit
