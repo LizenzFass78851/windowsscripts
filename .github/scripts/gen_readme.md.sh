@@ -26,7 +26,14 @@ rm $PATCHTHEFILE
 
 # Erstelle die Datei
 # Schicht 1
-echo -e '# Windows Scripts\n\n\nContains scripts and files for retrofitting certain functions under windows\n\n## Overview of the scripts and tools:' | tee $PATCHTHEFILE
+cat <<EOF | tee $PATCHTHEFILE
+# Windows Scripts
+
+
+Contains scripts and files for retrofitting certain functions under windows
+
+## Overview of the scripts and tools:
+EOF
 
 # Die Links
 while read line; do
