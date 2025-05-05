@@ -18,8 +18,6 @@ env:
 
 jobs:
   generate-and-deploy:
-    container:
-      image: ubuntu:24.04
     runs-on: ubuntu-latest
 #    if: github.repository == ''
 
@@ -30,17 +28,6 @@ jobs:
           export KEY="${GITHUB_WORKFLOW%-*}"
           echo "key=$KEY" >> $GITHUB_OUTPUT
           echo "################################################################" && bash -c "echo KEY=$KEY"
-
-      - name: update
-        run: apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade
-
-      - name: install
-        run: |
-          DEBIAN_FRONTEND=noninteractive apt-get -y install \
-            git locales
-
-      - name: locale
-        run: locale-gen en_US.utf8 && locale-gen de_DE.UTF-8 && update-locale
 
       - name: clone
         env:
