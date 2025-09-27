@@ -30,10 +30,16 @@ for /f "tokens=1-2 delims=:" %%a in ("%time%") do set currenttime=%%a:%%b
 if defined endtime if "!currenttime!" geq "%endtime%" goto end
 
 REM Ping command and logging the result
-for /f "tokens=4-5 delims= " %%a in ('ping -n 1 %target% ^| find "time="') do (
-    set pingtime=%%b
-    echo !date! !time! - %target% is reachable - !pingtime! 
-    echo !date! !time! - %target% is reachable - !pingtime! >> %logfile%
+ping -n 1 %target% | findstr /C:"time=" /C:"time<" >nul
+if errorlevel 1 (
+    echo !date! !time! - %target% is NOT reachable
+    echo !date! !time! - %target% is NOT reachable >> %logfile%
+) else (
+    for /f "tokens=4-5 delims= " %%a in ('ping -n 1 %target% ^| findstr /C:"time=" /C:"time<"') do (
+        set pingtime=%%b
+        echo !date! !time! - %target% is reachable - !pingtime!
+        echo !date! !time! - %target% is reachable - !pingtime! >> %logfile%
+    )
 )
 
 REM waiting time
