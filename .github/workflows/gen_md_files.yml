@@ -14,7 +14,6 @@ on:
 
 env:
   SCRIPT01: .github/scripts/gen_readme.md.sh
-#  SCRIPT02: 
 
 jobs:
   generate-and-deploy:
@@ -22,25 +21,16 @@ jobs:
 #    if: github.repository == ''
 
     steps:
-      - name: key
-        id: key
-        run: |
-          export KEY="${GITHUB_WORKFLOW%-*}"
-          echo "key=$KEY" >> $GITHUB_OUTPUT
-          echo "################################################################" && bash -c "echo KEY=$KEY"
-
       - name: clone
         uses: actions/checkout@main
         with:
           clean: false
 
       - name: generate
+        env:
+          LANG: en_US.utf8
         run: |
-          export LANG=en_US.utf8
-          [ "${{ github.workflow }}" != "${{ steps.key.outputs.key }}" ] && c=5 || c=1
-          
-          seq $c | while read x; do echo run ${{ env.SCRIPT01 }} && chmod +x ${{ env.SCRIPT01 }} && ./${{ env.SCRIPT01 }}; done
-#          seq $c | while read x; do echo run ${{ env.SCRIPT02 }} && chmod +x ${{ env.SCRIPT02 }} && ./${{ env.SCRIPT02 }}; done
+          echo run ${{ env.SCRIPT01 }} && chmod +x ${{ env.SCRIPT01 }} && ./${{ env.SCRIPT01 }}
 
       - name: commit
         env:
