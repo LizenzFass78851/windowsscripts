@@ -12,20 +12,26 @@ goto UACPrompt
 ) else ( goto gotAdmin )
 
 :UACPrompt
-if exist "%SYSTEMROOT%\System32\Cscript.exe" ( goto VBS )
-goto PS
+if exist "%SYSTEMROOT%\System32\Cscript.exe" (
+    if exist "%SYSTEMROOT%\System32\vbscript.dll" (
+        goto VBS
+    )
+)
+>nul 2>&1 where /Q powershell.exe && (
+    goto PS
+)
 
 :VBS
 echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
 echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
 
 echo Running created temporary "%temp%\getadmin.vbs"
-timeout /T 2
+timeout /T 2 /NOBREAK >nul
 "%temp%\getadmin.vbs"
 exit /B
 
 :PS
-REM timeout /T 2
+REM timeout /T 2 /NOBREAK >nul
 powershell -Command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'"
 exit /b
 
