@@ -1,12 +1,15 @@
 @echo off
 
->nul 2>&1 fsutil dirty query %systemdrive% && (goto gotAdmin) || (goto UACPrompt)
+>nul 2>&1 reg.exe query HKU\S-1-5-19 && (goto gotAdmin) || (goto UACPrompt)
 :UACPrompt
 if exist "%SYSTEMROOT%\System32\Cscript.exe" (
-    echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "%~s0", "", "", "runas", 1 > "%temp%\getadmin.vbs"
-    cscript //nologo "%temp%\getadmin.vbs"
-    exit /b
-) else (
+    if exist "%SYSTEMROOT%\System32\vbscript.dll" (
+        echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "%~s0", "", "", "runas", 1 > "%temp%\getadmin.vbs"
+        cscript //nologo "%temp%\getadmin.vbs"
+        exit /b
+    )
+)
+>nul 2>&1 where /Q powershell.exe && (
     powershell -Command "Start-Process -Verb RunAs -FilePath '%~s0'"
     exit /b
 )
