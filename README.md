@@ -21,5 +21,6 @@ Contains scripts and files for retrofitting certain functions under windows
 - [script for easy install windows updates from file](./script%20for%20easy%20install%20windows%20updates%20from%20file)
 - [scripts for install .net framework of install-dvd](./scripts%20for%20install%20.net%20framework%20of%20install-dvd)
 - [scripts for retrofitting functions for windows home](./scripts%20for%20retrofitting%20functions%20for%20windows%20home)
+- [SID Changer Tool](./SID%20Changer%20Tool)
 - [w11 modding](./w11%20modding)
 - [Windows Remote Assistance](./Windows%20Remote%20Assistance)
