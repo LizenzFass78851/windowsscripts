@@ -5,9 +5,7 @@ on:
     branches: [ main ]
 #    paths:
 #      - '.github/workflows/gen_md_files.yml'
-#  
-#      - '.github/scripts/gen_readme.md.sh.sh'
-  
+#      - '.github/scripts/gen_readme.md.sh'
 #  schedule:
 #    - cron: '20 12 * * *'
   workflow_dispatch:
@@ -19,8 +17,8 @@ jobs:
   generate-and-deploy:
     runs-on: ubuntu-latest
 #    if: github.repository == ''
-
     steps:
+
       - name: clone
         uses: actions/checkout@main
         with:
@@ -30,7 +28,7 @@ jobs:
         env:
           LANG: en_US.utf8
         run: |
-          echo run ${{ env.SCRIPT01 }} && chmod +x ${{ env.SCRIPT01 }} && ./${{ env.SCRIPT01 }}
+          echo run ${{ env.SCRIPT01 }} && $SHELL ./${{ env.SCRIPT01 }}
 
       - name: commit
         env:
@@ -45,4 +43,3 @@ jobs:
           git diff --cached --quiet && exit 0 || git commit -m "docs: Update MD Files"
           git config --local credential.helper '!x() { echo "password=$GITHUB_TOKEN"; };x'
           git push origin $GITHUB_REF_NAME
-
