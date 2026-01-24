@@ -15,9 +15,12 @@ env:
 
 jobs:
   generate-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim # Use "ubuntu-latest" if the generated scripts you are using take longer than 15 minutes to run.
 #    if: github.repository == ''
     steps:
+
+      - name: locale
+        run: sudo $SHELL -c "locale-gen en_US.utf8 && update-locale"
 
       - name: clone
         uses: actions/checkout@main
