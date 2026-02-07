@@ -5,6 +5,6 @@
 > This applies to .NET Framework version 3.5
 
 > [!IMPORTANT]
-> **These scripts works only on windows 8.1 up to windows 11 25H2**
+> **These scripts works only on windows 8.1 up to windows 11 build 26X00**
 > 
-> Newer versions of windows 11 (e.g windows 11 26H1 and newer) are not working because an addional install setup was needed (It's kind of the same as with Windows 7.)
+> Newer versions of windows 11 (e.g windows 11 build 28000 and newer) are not working because an addional install setup was needed (It's kind of the same as with Windows 7.)
