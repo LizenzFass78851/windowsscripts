@@ -11,6 +11,7 @@ Contains scripts and files for retrofitting certain functions under windows
 - [DIY USB Whitelisting](./DIY%20USB%20Whitelisting)
 - [dpi set script](./dpi%20set%20script)
 - [Email signature script for Outlook](./Email%20signature%20script%20for%20Outlook)
+- [Fix The SecureBoot](./Fix%20The%20SecureBoot)
 - [get admin script](./get%20admin%20script)
 - [Microsoft easy fix](./Microsoft%20easy%20fix)
 - [Office Tools and Scripts](./Office%20Tools%20and%20Scripts)
