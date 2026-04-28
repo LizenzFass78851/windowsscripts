@@ -4,20 +4,14 @@ pushd "%CD%" && CD /D "%~dp0"
 
 SET LINE===================================================
 
-if "%PROCESSOR_ARCHITECTURE%"=="x86"   SET "ZIPEXE=.\7z-bin\x86\7z.exe"
-if "%PROCESSOR_ARCHITECTURE%"=="AMD64" SET "ZIPEXE=.\7z-bin\x64\7z.exe"
-if "%PROCESSOR_ARCHITECTURE%"=="ARM"   SET "ZIPEXE=.\7z-bin\x86\7z.exe"
-if "%PROCESSOR_ARCHITECTURE%"=="ARM64" SET "ZIPEXE=.\7z-bin\arm64\7z.exe"
+if "%PROCESSOR_ARCHITECTURE%"=="x86"   SET "ZIPEXE=C:\Program Files (x86)\7-Zip\7z.exe"
+if "%PROCESSOR_ARCHITECTURE%"=="AMD64" SET "ZIPEXE=C:\Program Files\7-Zip\7z.exe"
+if "%PROCESSOR_ARCHITECTURE%"=="ARM"   SET "ZIPEXE=C:\Program Files (x86)\7-Zip\7z.exe"
+if "%PROCESSOR_ARCHITECTURE%"=="ARM64" SET "ZIPEXE=C:\Program Files\7-Zip\7z.exe"
 
 if not exist "%ZIPEXE%" (
-    if "%PROCESSOR_ARCHITECTURE%"=="x86"   SET "ZIPEXE=C:\Program Files (x86)\7-Zip\7z.exe"
-    if "%PROCESSOR_ARCHITECTURE%"=="AMD64" SET "ZIPEXE=C:\Program Files\7-Zip\7z.exe"
-    if "%PROCESSOR_ARCHITECTURE%"=="ARM"   SET "ZIPEXE=C:\Program Files (x86)\7-Zip\7z.exe"
-    if "%PROCESSOR_ARCHITECTURE%"=="ARM64" SET "ZIPEXE=C:\Program Files\7-Zip\7z.exe"
-)
-
-if not exist "%ZIPEXE%" (
-    echo "local or installed 7z are not found"
+    echo "installed 7-Zip are not found"
+    echo "please install 7-Zip and run this batch again"
     SET errorlevel=1
     goto error
 )
