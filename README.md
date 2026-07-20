@@ -13,6 +13,7 @@ Contains scripts and files for retrofitting certain functions under windows
 - [Email signature script for Outlook](./Email%20signature%20script%20for%20Outlook)
 - [Fix The SecureBoot](./Fix%20The%20SecureBoot)
 - [get admin script](./get%20admin%20script)
+- [GPO Templates](./GPO%20Templates)
 - [Microsoft easy fix](./Microsoft%20easy%20fix)
 - [Office Tools and Scripts](./Office%20Tools%20and%20Scripts)
 - [Ping Logger](./Ping%20Logger)
