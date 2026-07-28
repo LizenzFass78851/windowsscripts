@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+<policyNamespaces>
+    <target prefix="adobe"     namespace="Microsoft.Policies.adobe" />
+    <using prefix="products" namespace="Microsoft.Policies.Products" />
+</policyNamespaces>
+<resources minRequiredRevision="1.0" />
+<supportedOn>
+    <definitions>
+    <!--At least Windows 7 or Windows Server 2008 R2-->
+    <definition name="SUPPORTED_Windows7" displayName="$(string.SUPPORTED_Windows7)">
+        <or>
+        <range ref="products:WindowsServer2008" minVersionIndex="1"/>
+        <range ref="products:MicrosoftWindows" minVersionIndex="6"/>
+        </or>
+    </definition>
+    </definitions>
+</supportedOn>
+<categories>
+	    <category name="Adobe" displayName="$(string.Cat_Adobe)"></category>
+		    <category name="Reader" displayName="$(string.Cat_Reader)"><parentCategory ref="adobe:Adobe" /></category>
+		    <category name="Acrobat" displayName="$(string.Cat_Acrobat)"><parentCategory ref="adobe:Adobe" /></category>
+</categories>
+</policyDefinitions>
+<!-- Created by module version 2.0.0 -->

@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>entrer le nom complet ici</displayName>
+  <description>entrer la description ici</description>
+  <resources>
+    <stringTable>
+
+      <string id="Cat_Adobe">Adobe</string>
+      <string id="Cat_Acrobat">Adobe Acrobat</string>
+      <string id="Cat_AcrobatClassic">Classic</string>
+
+      <string id="SecurityCategory">Security</string>
+      <string id="CloudCategory">Cloud Services</string>
+      <string id="EmbeddedContentCategory">Embedded Content</string>
+      <string id="UpdaterCategory">Updater</string>
+      <string id="OtherCategory">Other</string>
+      <string id="MPIPCategory">Purview</string>
+      <string id="TrustedLocationCategory">Trusted Locations</string>
+
+      <string id="bEnableAV2Enterprise">Specifies whether to enable the Modern Viewer</string>
+      <string id="bEnableAV2Enterprise_Help">
+The new app UI is rolling out in phases over 2023.
+Set to Disabled to: Don't show the Modern Viewer
+Set to Enabled to: Show the Modern Viewer
+     </string>
+
+      <string id="bMIPLabelling">Enable Microsoft Purview Information Protection</string>
+      <string id="bMIPLabelling_Help">
+Set to Disabled to: disable the Microsoft Purview Information Protection
+Set to Enabled to: enable the Enable Microsoft Purview Information Protection
+     </string>
+
+      <string id="bMIPExternalAuthAdmin">Enable browser authentication for MPIP operations</string>
+      <string id="bMIPExternalAuthAdmin_Help">
+Set to Disabled to: disable the browser authentication for MPIP operations
+Set to Enabled to: enable the browser authentication for MPIP operations
+     </string>
+
+      <string id="bMIPCheckPolicyOnDocSave">Enable the Default and Mandatory labelling</string>
+      <string id="bMIPCheckPolicyOnDocSave_Help">
+You may be forced to apply labels (mandatory labeling) or the default label may be applied on your PDF if you don't set one (default labeling).
+Set to Disabled to: disable the Default and Mandatory labelling
+Set to Enabled to: Enable the Default and Mandatory labelling
+     </string>
+
+      <string id="bEnableDKEAdmin">Enable double key encryption for MPIP operations</string>
+      <string id="bEnableDKEAdmin_Help">
+Set to Disabled to: disable double key encryption for MPIP operations
+Set to Enabled to: Enable double key encryption for MPIP operations
+     </string>
+
+      <string id="bShowDMB">Enable the document message bar</string>
+      <string id="bShowDMB_Help">
+To enable the document message bar in MPIP protected PDFs
+Set to Disabled to: Don't show the message bar
+Set to Enabled to: Show the message bar
+     </string>
+
+      <string id="bUpdateToSingleApp">Stop automatic upgrade of Acrobat Reader 32-bit to Acrobat Reader 64-bit</string>
+      <string id="bUpdateToSingleApp_Help">
+To stop the Acrobat Reader 32-bit application from automatically upgrading to the 64-bit version,
+set the following before the first launch of the application:
+Set to Disabled to: Stop upgrading
+Set to Enabled to: automatically upgrade to 64-bit version
+     </string>
+
+      <string id="bDisableThumbnailPreviewHandler">Disable thumbnails in Windows Explorer</string>
+      <string id="bDisableThumbnailPreviewHandler_Help">
+Set to Enabled to: Prevent the end user from enabling PDF preview in Windows Explorer
+Set to Disabled to: Allow the end user from enabling PDF preview in Windows Explorer
+      </string>
+
+      <string id="bIsSCReducedModeEnforcedEx">Disable mandatory sign-in</string>
+      <string id="bIsSCReducedModeEnforcedEx_Help">
+Set to Enabled to disable the mandatory sign-in in Acrobat
+Set to Disabled to enable the mandatory sign-in in Acrobat
+      </string>
+
+      <string id="bEnableGentech">Disable Generative AI</string>
+      <string id="bEnableGentech_Help">
+Set to Enabled to enable the Generative AI feature in Acrobat
+Set to Disabled to disable the Generative AI feature in Acrobat
+      </string>
+
+      <string id="bAutoLaunchAtDocClose">Examine document when closing document</string>
+      <string id="bAutoLaunchAtDocClose_Help">
+Set to Enabled to examine document when closing document in Acrobat
+Set to Disabled to disable examining document when closing document in Acrobat
+      </string>
+
+      <string id="bAutoLaunchAtSendMail">Examine document when sending document by email</string>
+      <string id="bAutoLaunchAtSendMail_Help">
+Set to Enabled to examine document when sending document by email in Acrobat
+Set to Disabled to disable examine document when sending document by email in Acrobat
+      </string>
+
+      <string id="bDisplayAboutDialog">Display splash screen at launch</string>
+      <string id="bDisplayAboutDialog_Help">
+Set to Disabled to Don't display the startup splash screen.
+Set to Enabled to Display the startup splash screen at every launch.
+      </string>
+
+      <string id="ENABLE_CHROMEEXT">Suppresses the First Time in-app experience</string>
+      <string id="ENABLE_CHROMEEXT_Help">
+Enable to suppress the First Time in-app experience if you do not want users to see the in-app experience for Chrome extension
+      </string>
+      <string id="SendMailShareRedirection">Mail icon behavior</string>
+      <string id="SendMailShareRedirection_Help">
+You can change the behavior of the email icon to send a PDF directly as email attachment.
+
+If disabled, this policy will restore the Attach to email experience and will not redirect to the new unified sharing experience.
+
+If enabled, this policy will redirect to the new unified share pane and unified sharing experience.
+      </string>
+      <string id="AdobeWelcomeScreen">Welcomescreen</string>
+      <string id="AdobeWelcomeScreen_Help">
+If disabled, this policy will disable the welcome screen of the Acrobat
+
+If enabled, this policy will activate the welcome screen of the Acrobat
+      </string>
+
+      <string id="JavaScript">JavaScript</string>
+      <string id="JavaScript_Help">
+  Set to 'Enabled' to enable Javascript at the user level.
+
+  Set to 'Disabled' to disable Javascript at the user level.
+
+  If not set at machine level, the user can still control Javascript in Preferences > Javascript.
+      </string>
+
+      <string id="GreyouttheLaunchfunctionality">Grey out the Launch functionality</string>
+      <string id="GreyouttheLaunchfunctionality_Help">
+Set to 'Enabled' to the grey out of the launch functionality in Adobe Acrobat
+
+See and set the 'Launch functionality' GPO item as well
+      </string>
+
+      <string id="Launchfunctionality">Launch functionality</string>
+      <string id="Launchfunctionality_Help">
+Set to 'Disabled' to disable the Launch functionality in Adobe Acrobat
+
+see Preferences > Trust Manager > 'Allow opening of non-PDF file attachments with external applications'
+      </string>
+
+      <string id="DisableAllUpdates">Disable automatic updates </string>
+      <string id="DisableAllUpdates_Help">
+Set to 'Disabled' to turn off automatic updates
+
+Set to 'Enabled'  to turn on  automatic updates
+      </string>
+
+      <string id="DisableUsageTracking">Turn off user participation in the feedback program</string>
+      <string id="DisableUsageTracking_Help">
+Set it to 'Disabled' to hide this option in Help
+      </string>
+
+      <string id="ProtectedModeatstartup">Enable Protected Mode at startup </string>
+      <string id="ProtectedModeatstartup_Help">
+Set to 'Enabled' to activate the Protected mode at startup
+
+Set to 'Disabled' to desactivate the Protected mode at startup
+
+see Preferences > Security (Enhanced) > 'Enabled Protected Mode at startup'
+      </string>
+
+      <string id="DisableEULA">Accept EULA</string>
+      <string id="DisableEULA_Help">Set to 'Enabled' to accept the EULA</string>
+
+      <string id="AskBeforeUpdatingRootCertificates">Ask before updating checkbox of Trusted root Certificates</string>
+      <string id="AskBeforeUpdatingRootCertificates_Help">
+Set to 'Enabled' to Ask before updating
+
+see Preferences > Trust Manager > Automatic Adobe Approved Trust List (AATL) updates
+      </string>
+
+      <string id="AskBeforeUpdatingEUCertificates">Ask before updating checkbox of Trusted EU Certificates </string>
+      <string id="AskBeforeUpdatingEUCertificates_Help">
+Set to 'Enabled' to Ask before updating
+
+see Preferences > Trust Manager > Automatic European Union Trusted list (EUTL) updates
+      </string>
+
+      <string id="ProtectedViewMode">Protected View mode</string>
+      <string id="ProtectedViewMode_Help">
+Set to 'Enabled' to activate 'Files from potentially unsafe location'.
+
+Set to 'Disabled' to set it to 'Off' (default)
+
+see Preferences > Security (Enhanced) > Proctected View
+      </string>
+
+      <string id="LoadSettingsFromURLCust">Load security settings from a server (Custom)</string>
+      <string id="LoadSettingsFromURLCust_Help">
+Set to 'Disabled' to disable the ability to load settings from a server URL
+
+see Preferences > Security > Load security settings from a server
+      </string>
+
+      <string id="LoadSettingsFromURLAATL">Load certificates from Adobe AATL server</string>
+      <string id="LoadSettingsFromURLAATL_Help">
+Set to 'Disabled' to disable the ability to load certificates from Adobe AATL server
+
+see Preferences > Trust Manager > Automatic Adobe Approved Trust List (AATL) updates
+      </string>
+
+      <string id="LoadSettingsFromURLEUTL">Load certificates from Adobe EUTL server</string>
+      <string id="LoadSettingsFromURLEUTL_Help">
+Set to 'Disabled' to disable the ability to load load certificates from Adobe EUTL server
+
+see Preferences > Trust Manager > Automatic European Union Trusted list (EUTL) updates
+      </string>
+
+      <string id="DisablePDFHandlerSwitching">Disable PDF Handler Switching</string>
+      <string id="DisablePDFHandlerSwitching_Help">
+Set to 'Enabled' to disable the ability to activate the PDF handler switching feature.
+
+Set to 'Disabled' to enable the ability to activate the PDF handler switching feature.
+
+See Preferences > General > Select Default PDF Handler
+      </string>
+
+      <string id="DisableJavaScript">Disable Javascript</string>
+      <string id="DisableJavaScript_Help">
+Set to 'Enabled' to disable Javascript at the machine level.
+
+Set to 'Disabled' to enable Javascript at the machine level.
+
+When this policy is set, the user level setting has no effect and the user cannot control Javascript in Preferences > Javascript.
+      </string>
+
+      <string id="ShowMsgAtLaunch">Show me messages when I launch Acrobat</string>
+      <string id="ShowMsgAtLaunch_Help">
+Set to 'Enabled' to activate Preferences > General > Show me messages when I launch Acrobat.
+      </string>
+
+      <string id="DontShowMsgWhenViewingDoc">Don't show messages while viewing a document</string>
+      <string id="DontShowMsgWhenViewingDoc_Help">
+Set to 'Enabled' to activate Preferences > General > Don't show messages while viewing a document
+      </string>
+
+      <string id="TrustOSTrustedSites">Automatically trust sites for my Win OS security zones</string>
+      <string id="TrustOSTrustedSites_Help">
+Set to 'Enabled' to automatically trust sites for my Win OS security zones
+
+See Preferences > Security (Enhanced) > Automatically trust sites for my Win OS security zones
+      </string>
+
+      <string id="DisableAllWebServices">Disable all web services</string>
+      <string id="DisableAllWebServices_Help">
+Prevents web service plugins from updating and also disables all services.
+
+Set it to 'Disabled' to turn them off or to 'Enabled' to turn them on
+      </string>
+
+      <string id="ToggleWebConnectors">Disable third party connectors</string>
+      <string id="ToggleWebConnectors_Help">
+Set to 'Enabled' to disable third party connectors such as Dropbox, Google Drive, etc.
+
+This new feature allows configuring in-product access to third party services for file storage
+      </string>
+
+      <string id="ToggleFillSign">Disable Fill and Sign</string>
+      <string id="ToggleFillSign_Help">
+Set to 'Enabled' to disable and lock the Fill and Sign feature
+      </string>
+
+      <string id="ToggleAdobeDocumentServices">Disable all services with exceptions</string>
+      <string id="ToggleAdobeDocumentServices_Help">
+Set to 'Enabled' to disable all service access except those features controlled by the other preferences:
+
+ Fill and Sign
+ Third party connectors
+ Adobe Send for Signature
+ Preference synchronization
+ Send and Track
+      </string>
+
+      <string id="ToggleAdobeSign">Disable Adobe Send for Signature</string>
+      <string id="ToggleAdobeSign_Help">
+Set to 'Enabled' to disable Adobe Send for Signature (formerly EchoSign)
+      </string>
+
+      <string id="TogglePrefsSync">Disable preference synchronization</string>
+      <string id="TogglePrefsSync_Help">
+Set to 'Enabled' to disable preference synchronization across devices.
+
+This new feature which synchronizes desktop preferences across machines with Acrobat and Reader on which the user is signed in with an Adobe ID.
+      </string>
+
+      <string id="ToggleSendAndTrack">Disable Send and Track</string>
+      <string id="ToggleSendAndTrack_Help">
+Set to 'Enabled' to disable and lock the Send and Track feature
+      </string>
+
+      <string id="DisableSharePointFeatures">Disable SharePoint integration</string>
+      <string id="DisableSharePointFeatures_Help">
+Set to 'Enabled' to disable the SharePoint integration.
+
+Set to 'Disabled' to enable the SharePoint integration.
+      </string>
+
+      <string id="AdobeSendPluginToggle">Send and Track plugin for Outlook</string>
+      <string id="AdobeSendPluginToggle_Help">
+Set to 'Enabled' to disable the Adobe Send and Track plugin for Outlook
+      </string>
+
+        <string id="CloudFilestore">Disable Cloud File Storage</string>
+        <string id="CloudFilestore_Help">
+Set to 'Enabled' to disable the  Cloud File Storage
+        </string>
+
+      <string id="CloudWebmail">Disable WebMail integration</string>
+      <string id="CloudWebmail_Help">
+Set to 'Enabled' to disable integration with WebMail services (ie Yahoo, Google, etc).
+      </string>
+
+      <string id="Enable3d">Disable 3D Content</string>
+      <string id="Enable3d_Help">
+Set to 'Enabled' to trust and render 3D files.
+Set to 'Disabled' to don't render 3D content.
+
+See Preferences > 3D &amp; Multimedia > 'Enable playing of 3D content'
+      </string>
+
+      <string id="3DEnableContent">Enable 3D Content</string>
+      <string id="3DEnableContent_Help">
+Set to 'Enabled' to enable 3D or to 'Disabled' to disable 3D in the user context.
+
+See Preferences > 3D &amp; Multimedia > 'Enable playing of 3D content'
+      </string>
+
+      <string id="AutoUriDetect">Enable Create Links from URL</string>
+      <string id="AutoUriDetect_Help">
+Set to 'Enabled' to enable 'Create Links from URL' or to 'Disabled' to disable 'Create Links from URL' in the user context.
+
+See Preferences > General > 'Create links from URL'
+      </string>
+
+      <string id="Upsell">Suppress Upsell</string>
+      <string id="Upsell_Help">
+Disables messages which encourage the user to upgrade the product.
+
+Set to 'Enabled' to disable Upsell.
+      </string>
+
+      <string id="Hyperlinks">Allow PDF to connect to web sites</string>
+      <string id="Hyperlinks_Help">
+Set to 'Disabled' to 'Allow PDF files to access all web sites'.
+
+Set to 'Enabled' to 'Block PDF files' access to all web sites'.
+
+See Preferences > Trust Manager > Internet Access
+      </string>
+
+      <string id="TrustedSites">User Trusted Sites</string>
+      <string id="TrustedSites_Help">
+Enable/Disable a user's ability to mark sites as Trusted.
+
+Trusted sites are not subjected to Protected View/Mode and other security features.
+
+Setting to Disabled will prevent user's from trusting PDF files before they are have been opened with Protected View.
+        </string>
+
+      <string id="TrustedFolders">User Trusted Folders and Files</string>
+      <string id="TrustedFolders_Help">
+
+Enable/Disable a user's ability to mark particular files as Trusted.
+
+This setting is related to the Yellow Message Bar for Protected View/Mode.
+
+By setting to Enabled or Not Configured a user can approve a single PDF file as trusted and get active content (like JavaScript) to execute.
+
+By setting to disabled a user will never be able to move beyond the Yellow Message Bar, essentially they will be in read-only mode and will not be able to enable any active content.
+
+Setting to disabled will have ramifications on user workflows.
+
+Not Configured and Disabled have the same behavior.
+        </string>
+
+      <string id="TrustedCertificate">Trust Certified Documents</string>
+      <string id="TrustedCertificate_Help">
+
+Enable/Disable Certified Documents as Trusted.
+
+Setting to Enabled will allow signed PDF files to open normally without any security restrictions.
+
+Not Configured or Disabled have the same behavior.
+    </string>
+
+    <string id="FipsMode">Configure FIPS mode</string>
+    <string id="FipsMode_Help">
+Turn FIPS mode on or off thereby requiring stronger encryptiong algortihms and limiting certain application behavior.
+Default is FIPS mode off.
+Not Configured and Disabled have the same behavior.
+    </string>
+
+    <string id="HyperlinksUserList">User non-whitelisted hyperlinks access to the Internet</string>
+    <string id="HyperlinksUserList_Help">
+Controls if hyperlinks, that are not in a user's list, clicked inside PDF documents are allowed to access the Internet.
+Only applicable if 'Hyperlink access to the Internet' is Not Configured.
+If 'Hyperlink access to the Internet' is Not Configured, then the default behavior is 'Always ask'.
+Not Configured and Enabled with 'Always ask' have the same behavior of always asking for permission.
+Users can change the value when it is set to Not Configured.
+    </string>
+
+    <string id="AlwaysAsk">Always ask</string>
+    <string id="AlwaysAllow">Always allow</string>
+    <string id="AlwaysBlock">Always block</string>
+
+    <string id="EnhancedSecurityStandalone">Enhanced Security: standalone mode</string>
+    <string id="EnhancedSecurityStandalone_Help">
+The Enhanced Security feature is designed to limit document behaviors in workflows where those behaviors are perceived as a vulnerability or security risk.
+Enhanced Security blocks 6 specific behaviors: data injection, script injection, silent printing, web links (if not allowed by Trust Manager settings), cross domain access, and access to external streams.
+Standalone mode occurs when Adobe Reader is running as an application.
+Enhanced Security is enabled by default.
+Configuring this setting to Enabled or Disabled prevents users from changing it from the administrator's desired configuration.
+Not Configured and Enabled have the same behavior of enabling Enhanced Security but users can change the value when it is set to Not Configured.
+    </string>
+
+    <string id="EnhancedSecurityBrowser">Enhanced Security: browser mode</string>
+    <string id="EnhancedSecurityBrowser_Help">
+The Enhanced Security feature is designed to limit document behaviors in workflows where those behaviors are perceived as a vulnerability or security risk.
+Enhanced Security blocks 6 specific behaviors: data injection, script injection, silent printing, web links (if not allowed by Trust Manager settings), cross domain access, and access to external streams.
+Browser mode occurs when Adobe Reader is running as a browser plugin.
+Enhanced Security is enabled by default.
+Configuring this setting to Enabled or Disabled prevents users from changing it from the administrator's desired configuration.
+Not Configured and Enabled have the same behavior of enabling Enhanced Security.
+Users can change the value when it is set to Not Configured.
+    </string>
+
+      <string id="ProtectedView">Protected View</string>
+      <string id="ProtectedView_Help">
+Protected View is a highly secure, read-only mode that blocks most actions and application behavior until the user decides whether or not to trust the document.
+This helps protect users from potentially malicous content inside PDF files.
+Protected View is only supported when Protected Mode is also enabled.
+Protected View is disabled by default.
+Not Configured and Disabled have the same behavior of disabling Protected Mode Protected View.
+Users can change the value when it is set to Not Configured.
+      </string>
+
+        <string id="DisableProtectedView">Disable Protected View</string>
+        <string id="EnableProtectedViewUnsafeOnly">Enable Protected View for unsafe locations only</string>
+        <string id="EnableProtectedView">Enable Protected View</string>
+
+      <string id="TrustedOSSites">OS Trusted Sites</string>
+      <string id="TrustedOSSites_Help">
+Enable/Disable OS Trusted sites (from IE Zones) and use them as Reader DC Trusted sites.
+IE Trusted Sites are generally already under IT control.
+Setting to Enabled will allow PDF files openned from OS Trusted Sites to open normally without any security restrictions.
+Not Configured and Disabled have the same behavior.
+        </string>
+
+    <string id="iMIPCloud">Point MPIP to your Microsoft Cloud type</string>
+    <string id="iMIPCloud_Help">
+ When working with the MPIP protected PDFs, you must configure the registry to point Adobe Acrobat or Reader to your Microsoft (Sovereign) Cloud type.
+    </string>
+
+    <string id="TestCloud">Test cloud</string>
+    <string id="Commercial">Global commercial cloud</string>
+    <string id="Germany">Germany sovereign cloud</string>
+    <string id="US_DoD">US sovereign cloud (DoD)</string>
+    <string id="US_GCC">US sovereign cloud (GCC)</string>
+    <string id="US_GCC_High">US sovereign cloud (GCC-High)</string>
+    <string id="US_Sec">US sovereign cloud (Sec)</string>
+    <string id="US_Nat">US sovereign cloud (Nat)</string>
+    <string id="China_01">China sovereign cloud</string>
+
+    </stringTable>
+
+    <presentationTable>
+      <presentation id="JavaScript" />
+      <presentation id="AdobeWelcomeScreen" />
+      <presentation id="Launchfunctionality" />
+      <presentation id="bDisplayAboutDialog" />
+      <presentation id="GreyouttheLaunchfunctionality" />
+      <presentation id="DisableAllUpdates" />
+      <presentation id="DisableUsageTracking" />
+      <presentation id="ProtectedModeatstartup" />
+      <presentation id="DisableEULA" />
+      <presentation id="AskBeforeUpdatingRootCertificates" />
+      <presentation id="AskBeforeUpdatingEUCertificates" />
+      <presentation id="ProtectedViewMode" />
+      <presentation id="LoadSettingsFromURLCust" />
+      <presentation id="LoadSettingsFromURLAATL" />
+      <presentation id="LoadSettingsFromURLEUTL" />
+      <presentation id="DisablePDFHandlerSwitching" />
+      <presentation id="DisableJavaScript" />
+      <presentation id="ShowMsgAtLaunch" />
+      <presentation id="DontShowMsgWhenViewingDoc" />
+      <presentation id="TrustOSTrustedSites" />
+      <presentation id="DisableAllWebServices" />
+      <presentation id="ToggleWebConnectors" />
+      <presentation id="ToggleFillSign" />
+      <presentation id="ToggleAdobeDocumentServices" />
+      <presentation id="ToggleAdobeSign" />
+      <presentation id="TogglePrefsSync" />
+      <presentation id="ToggleSendAndTrack" />
+      <presentation id="DisableSharePointFeatures" />
+      <presentation id="AdobeSendPluginToggle" />
+      <presentation id="bShowDMB" />
+      <presentation id="bMIPCheckPolicyOnDocSave" />
+      <presentation id="bMIPExternalAuthAdmin" />
+      <presentation id="bMIPLabelling" />
+      <presentation id="bEnableDKEAdmin" />
+
+      <presentation id="HyperlinksUserList_Dropdown">
+        <dropdownList defaultItem="2" refId="HyperlinksUserListMode">Hyperlinks in user list</dropdownList>
+      </presentation>
+
+      <presentation id="iMIPCloud_Dropdown">
+        <dropdownList defaultItem="2" refId="iMIPCloudLevel">Cloud type:</dropdownList>
+      </presentation>
+
+      <presentation id="ProtectedView_Dropdown">
+        <dropdownList defaultItem="2" refId="ProtectedViewLevel">Protected View:</dropdownList>
+      </presentation>
+
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
+<!-- Created by module version 2.0.0 -->

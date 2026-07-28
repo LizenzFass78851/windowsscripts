@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="Reader" namespace="Microsoft.Policies.Adobe.Reader.2017" />
+    <using prefix="adobe"    namespace="Microsoft.Policies.adobe" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="Reader2017" displayName="$(string.Cat_Reader2017)">
+    <parentCategory ref="adobe:Reader" /></category>
+
+    <category displayName="$(string.SecurityCategory)" name="SecurityCategory">
+      <parentCategory ref="Reader2017"/>
+    </category>
+    <category displayName="$(string.EmbeddedContentCategory)" name="EmbeddedContentCategory">
+      <parentCategory ref="Reader2017"/>
+    </category>
+    <category displayName="$(string.CloudCategory)" name="CloudCategory">
+      <parentCategory ref="Reader2017"/>
+    </category>
+    <category displayName="$(string.TrustedLocationCategory)" name="TrustedLocationCategory">
+      <parentCategory ref="Reader2017"/>
+    </category>
+    <category displayName="$(string.UpdaterCategory)" name="UpdaterCategory">
+      <parentCategory ref="Reader2017"/>
+    </category>
+    <category displayName="$(string.OtherCategory)" name="OtherCategory">
+      <parentCategory ref="Reader2017"/>
+    </category>
+    <category displayName="$(string.MPIPCategory)" name="MPIPCategory">
+      <parentCategory ref="Reader2017"/>
+    </category>
+  </categories>
+  <policies>
+
+  <policy name="bMIPLabelling"
+  class="Machine"
+  displayName="$(string.bMIPLabelling)"
+  explainText="$(string.bMIPLabelling_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bMIPLabelling">
+  <parentCategory ref="MPIPCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="bMIPExternalAuthAdmin"
+  class="Machine"
+  displayName="$(string.bMIPExternalAuthAdmin)"
+  explainText="$(string.bMIPExternalAuthAdmin_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bMIPExternalAuthAdmin">
+  <parentCategory ref="MPIPCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="bMIPCheckPolicyOnDocSave"
+  class="Machine"
+  displayName="$(string.bMIPCheckPolicyOnDocSave)"
+  explainText="$(string.bMIPCheckPolicyOnDocSave_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bMIPCheckPolicyOnDocSave">
+  <parentCategory ref="MPIPCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="bEnableDKEAdmin"
+  class="Machine"
+  displayName="$(string.bEnableDKEAdmin)"
+  explainText="$(string.bEnableDKEAdmin_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bEnableDKEAdmin">
+  <parentCategory ref="MPIPCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="iMIPCloud"
+   class="Machine"
+   displayName="$(string.iMIPCloud)"
+   explainText="$(string.iMIPCloud_Help)"
+   key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+   valueName="iMIPCloud"
+   presentation="$(presentation.iMIPCloud_Dropdown)">
+   <parentCategory ref="MPIPCategory"/>
+   <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <elements>
+            <enum id="iMIPCloudLevel" valueName="iMIPCloud" required="true">
+                <item displayName="$(string.TestCloud)">
+                    <value><decimal value="2" /></value>
+                </item>
+                <item displayName="$(string.Commercial)">
+                    <value><decimal value="3" /></value>
+                </item>
+                <item displayName="$(string.Germany)">
+                    <value><decimal value="4" /></value>
+                </item>
+                <item displayName="$(string.US_DoD)">
+                    <value><decimal value="5" /></value>
+                </item>
+                <item displayName="$(string.US_GCC)">
+                    <value><decimal value="6" /></value>
+                </item>
+                <item displayName="$(string.US_GCC_High)">
+                    <value><decimal value="7" /></value>
+                </item>
+                <item displayName="$(string.US_Sec)">
+                    <value><decimal value="8" /></value>
+                </item>
+                <item displayName="$(string.US_Nat)">
+                    <value><decimal value="9" /></value>
+                </item>
+                <item displayName="$(string.China_01)">
+                    <value><decimal value="10" /></value>
+                </item>
+            </enum>
+      </elements>
+  </policy>
+
+  <policy name="bDisableThumbnailPreviewHandler"
+  class="Machine"
+  displayName="$(string.bDisableThumbnailPreviewHandler)"
+  explainText="$(string.bDisableThumbnailPreviewHandler_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bDisableThumbnailPreviewHandler">
+  <parentCategory ref="OtherCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="bIsSCReducedModeEnforcedEx"
+  class="Machine"
+  displayName="$(string.bIsSCReducedModeEnforcedEx)"
+  explainText="$(string.bIsSCReducedModeEnforcedEx_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bIsSCReducedModeEnforcedEx">
+  <parentCategory ref="OtherCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="bEnableGentech"
+  class="Machine"
+  displayName="$(string.bEnableGentech)"
+  explainText="$(string.bEnableGentech_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bEnableGentech">
+  <parentCategory ref="OtherCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="bEnableAV2Enterprise"
+  class="Machine"
+  displayName="$(string.bEnableAV2Enterprise)"
+  explainText="$(string.bEnableAV2Enterprise_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bEnableAV2Enterprise">
+  <parentCategory ref="OtherCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="bAutoLaunchAtDocClose"
+   class="User"
+   displayName="$(string.bAutoLaunchAtDocClose)"
+   explainText="$(string.bAutoLaunchAtDocClose_Help)"
+   key="Software\Adobe\Acrobat Reader\2017\Security"
+   valueName="bAutoLaunchAtDocClose">
+   <parentCategory ref="SecurityCategory"/>
+   <supportedOn ref="adobe:SUPPORTED_Windows7" />
+   <enabledValue><decimal value="1" /></enabledValue>
+   <disabledValue><decimal value="0" /></disabledValue>
+ </policy>
+
+  <policy name="bAutoLaunchAtSendMail"
+   class="User"
+   displayName="$(string.bAutoLaunchAtSendMail)"
+   explainText="$(string.bAutoLaunchAtSendMail_Help)"
+   key="Software\Adobe\Acrobat Reader\2017\Security"
+   valueName="bAutoLaunchAtSendMail">
+   <parentCategory ref="SecurityCategory"/>
+   <supportedOn ref="adobe:SUPPORTED_Windows7" />
+   <enabledValue><decimal value="1" /></enabledValue>
+   <disabledValue><decimal value="0" /></disabledValue>
+ </policy>
+
+  <policy name="bUpdateToSingleApp"
+  class="Machine"
+  displayName="$(string.bUpdateToSingleApp)"
+  explainText="$(string.bUpdateToSingleApp_Help)"
+  key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+  valueName="bUpdateToSingleApp">
+  <parentCategory ref="OtherCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="1" /></enabledValue>
+  <disabledValue><decimal value="0" /></disabledValue>
+</policy>
+
+  <policy name="ENABLE_CHROMEEXT"
+  class="Machine"
+  displayName="$(string.ENABLE_CHROMEEXT)"
+  explainText="$(string.ENABLE_CHROMEEXT_Help)"
+  key="Software\WOW6432Node\Adobe\Acrobat Reader\2017\Installer"
+  valueName="ENABLE_CHROMEEXT">
+  <parentCategory ref="OtherCategory"/>
+  <supportedOn ref="adobe:SUPPORTED_Windows7" />
+  <enabledValue><decimal value="0" /></enabledValue>
+  <disabledValue><decimal value="1" /></disabledValue>
+</policy>
+
+    <policy name="SendMailShareRedirection"
+        class="Machine"
+        displayName="$(string.SendMailShareRedirection)"
+        explainText="$(string.SendMailShareRedirection_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bSendMailShareRedirection">
+        <parentCategory ref="OtherCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Trust Manager > Enhanced Security -->
+    <policy name="EnhancedSecurityStandalone"
+        class="Machine"
+        displayName="$(string.EnhancedSecurityStandalone)"
+        explainText="$(string.EnhancedSecurityStandalone_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bEnhancedSecurityStandalone">
+        <parentCategory ref="SecurityCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="EnhancedSecurityBrowser"
+        class="Machine"
+        displayName="$(string.EnhancedSecurityBrowser)"
+        explainText="$(string.EnhancedSecurityBrowser_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bEnhancedSecurityInBrowser">
+        <parentCategory ref="SecurityCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="ProtectedModeatstartup"
+        class="Machine"
+        displayName="$(string.ProtectedModeatstartup)"
+        explainText="$(string.ProtectedModeatstartup_Help)"
+        presentation="$(presentation.ProtectedModeatstartup)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bProtectedMode">
+        <parentCategory ref="SecurityCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Trust Manager > Protected View -->
+    <policy name="ProtectedView"
+        class="Machine"
+        displayName="$(string.ProtectedView)"
+        explainText="$(string.ProtectedView_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="iProtectedView"
+        presentation="$(presentation.ProtectedView_Dropdown)">
+        <parentCategory ref="SecurityCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <elements>
+            <enum id="ProtectedViewLevel" valueName="iProtectedView" required="true">
+                <item displayName="$(string.DisableProtectedView)">
+                    <value><decimal value="0" /></value>
+                </item>
+                <item displayName="$(string.EnableProtectedViewUnsafeOnly)">
+                    <value><decimal value="1" /></value>
+                </item>
+                <item displayName="$(string.EnableProtectedView)">
+                    <value><decimal value="2" /></value>
+                </item>
+            </enum>
+      </elements>
+    </policy>
+
+    <!-- Trust Manager > Internet Access -->
+    <policy name="Hyperlinks"
+        class="User"
+        displayName="$(string.Hyperlinks)"
+        explainText="$(string.Hyperlinks_Help)"
+        key="Software\Adobe\Acrobat Reader\2017\TrustManager\cDefaultLaunchURLPerms"
+        valueName="iURLPerms">
+        <parentCategory ref="TrustedLocationCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="2" /></disabledValue>
+    </policy>
+
+    <policy name="HyperlinksUserList_MP"
+        class="Machine"
+        displayName="$(string.HyperlinksUserList)"
+        explainText="$(string.HyperlinksUserList_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cDefaultLaunchURLPerms"
+        valueName="iUnknownURLPerms"
+        presentation="$(presentation.HyperlinksUserList_Dropdown)">
+        <parentCategory ref="TrustedLocationCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <elements>
+            <enum id="HyperlinksUserListMode" valueName="iUnknownURLPerms" required="true">
+                <item displayName="$(string.AlwaysAsk)">
+                    <value><decimal value="1" /></value>
+                </item>
+                <item displayName="$(string.AlwaysAllow)">
+                    <value><decimal value="2" /></value>
+                </item>
+                <item displayName="$(string.AlwaysBlock)">
+                    <value><decimal value="3" /></value>
+                </item>
+            </enum>
+        </elements>
+    </policy>
+
+    <policy name="HyperlinksUserList"
+        class="User"
+        displayName="$(string.HyperlinksUserList)"
+        explainText="$(string.HyperlinksUserList_Help)"
+        key="Software\Adobe\Acrobat Reader\2017\TrustManager\cDefaultLaunchURLPerms"
+        valueName="iUnknownURLPerms"
+        presentation="$(presentation.HyperlinksUserList_Dropdown)">
+        <parentCategory ref="TrustedLocationCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <elements>
+            <enum id="HyperlinksUserListMode" valueName="iUnknownURLPerms" required="true">
+                <item displayName="$(string.AlwaysAsk)">
+                    <value><decimal value="1" /></value>
+                </item>
+                <item displayName="$(string.AlwaysAllow)">
+                    <value><decimal value="2" /></value>
+                </item>
+                <item displayName="$(string.AlwaysBlock)">
+                    <value><decimal value="3" /></value>
+                </item>
+            </enum>
+        </elements>
+    </policy>
+
+    <!-- Trust Manager > Attachments / iFileAttachmentPerms -->
+    <!-- bEnableFlash -->
+
+    <!-- General -->
+    <policy name="DisablePDFHandlerSwitching"
+        class="Machine"
+        displayName="$(string.DisablePDFHandlerSwitching)"
+        explainText="$(string.DisablePDFHandlerSwitching_Help)"
+        presentation="$(presentation.DisablePDFHandlerSwitching)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bDisablePDFHandlerSwitching">
+        <parentCategory ref="SecurityCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="AdobeSendPluginToggle"
+        class="Machine"
+        displayName="$(string.AdobeSendPluginToggle)"
+        explainText="$(string.AdobeSendPluginToggle_Help)"
+        presentation="$(presentation.AdobeSendPluginToggle)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cCloud"
+        valueName="bAdobeSendPluginToggle">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="ToggleAdobeDocumentServices"
+        class="Machine"
+        displayName="$(string.ToggleAdobeDocumentServices)"
+        explainText="$(string.ToggleAdobeDocumentServices_Help)"
+        presentation="$(presentation.ToggleAdobeDocumentServices)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cServices"
+        valueName="bToggleAdobeDocumentServices">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="TogglePrefsSync"
+        class="Machine"
+        displayName="$(string.TogglePrefsSync)"
+        explainText="$(string.TogglePrefsSync_Help)"
+        presentation="$(presentation.TogglePrefsSync)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cServices"
+        valueName="bTogglePrefsSync">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- DisableMaintenance32 needs to be moved to a GP Preference -->
+    <!-- DisableMaintenance64 needs to be moved to a GP Preference -->
+
+    <!-- bEnableAlwaysOutlookAttachmentProtectedView -->
+
+    <!-- Trusted Location Settings -->
+    <policy name="TrustedSites"
+        class="Machine"
+        displayName="$(string.TrustedSites)"
+        explainText="$(string.TrustedSites_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bDisableTrustedSites">
+        <parentCategory ref="TrustedLocationCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="TrustedFolders"
+        class="Machine"
+        displayName="$(string.TrustedFolders)"
+        explainText="$(string.TrustedFolders_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bDisableTrustedFolders">
+        <parentCategory ref="TrustedLocationCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="TrustedOSSites"
+        class="Machine"
+        displayName="$(string.TrustedOSSites)"
+        explainText="$(string.TrustedOSSites_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bDisableOSTrustedSites">
+        <parentCategory ref="TrustedLocationCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="TrustedCertificate"
+        class="Machine"
+        displayName="$(string.TrustedCertificate)"
+        explainText="$(string.TrustedCertificate_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bEnableCertificateBasedTrust">
+        <parentCategory ref="TrustedLocationCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Cloud Settings -->
+    <policy name="DisableSharePointFeatures"
+        class="Machine"
+        displayName="$(string.DisableSharePointFeatures)"
+        explainText="$(string.DisableSharePointFeatures_Help)"
+        presentation="$(presentation.DisableSharePointFeatures)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cSharePoint"
+        valueName="bDisableSharePointFeatures">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy  name="CloudFilestore"
+        class="Machine"
+        displayName="$(string.CloudFilestore)"
+        explainText="$(string.CloudFilestore_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cCloud"
+        valueName="bDisableADCFileStore">
+        <parentCategory ref="CloudCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="CloudWebmail"
+        class="Machine"
+        displayName="$(string.CloudWebmail)"
+        explainText="$(string.CloudWebmail_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cWebmailProfiles"
+        valueName="bDisableWebmail">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="ToggleAdobeSign"
+        class="Machine"
+        displayName="$(string.ToggleAdobeSign)"
+        explainText="$(string.ToggleAdobeSign_Help)"
+        presentation="$(presentation.ToggleAdobeSign)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cServices"
+        valueName="bToggleAdobeSign">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="ToggleWebConnectors"
+        class="Machine"
+        displayName="$(string.ToggleWebConnectors)"
+        explainText="$(string.ToggleWebConnectors_Help)"
+        presentation="$(presentation.ToggleWebConnectors)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cServices"
+        valueName="bToggleWebConnectors">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Updater Settings -->
+
+    <policy name="DisableAllUpdates"
+        class="Machine"
+        displayName="$(string.DisableAllUpdates)"
+        explainText="$(string.DisableAllUpdates_Help)"
+        presentation="$(presentation.DisableAllUpdates)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bUpdater">
+        <parentCategory ref="UpdaterCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="DisableAllWebServices"
+        class="Machine"
+        displayName="$(string.DisableAllWebServices)"
+        explainText="$(string.DisableAllWebServices_Help)"
+        presentation="$(presentation.DisableAllWebServices)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cServices"
+        valueName="bUpdater">
+        <parentCategory ref="UpdaterCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- iLogLevel needs to be moved to a GP Preference -->
+
+    <policy name="DisableEULA"
+        class="User"
+        displayName="$(string.DisableEULA)"
+        explainText="$(string.DisableEULA_Help)"
+        presentation="$(presentation.DisableEULA)"
+        key="Software\Adobe\Acrobat Reader\2017\AdobeViewer"
+        valueName="EULA">
+        <parentCategory ref="UpdaterCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- iDisableCheckEula needs to be moved to a GP Preference -->
+
+    <!-- needs to be moved to a GP Preference
+        Mode key="Software\Wow6432Node\Adobe\Adobe ARM\Legacy\Reader\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}"
+    -->
+
+    <!-- iCheckReader needs to be moved to a GP Preference -->
+
+    <!-- Embedded Content Settings -->
+
+    <policy name="DisableJavaScript"
+        class="Machine"
+        displayName="$(string.DisableJavaScript)"
+        explainText="$(string.DisableJavaScript_Help)"
+        presentation="$(presentation.DisableJavaScript)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bDisableJavaScript">
+        <parentCategory ref="EmbeddedContentCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!--  FeatureLockDown\cJavaScriptPerms tBlackList -->
+
+    <policy name="Enable3d"
+        class="Machine"
+        displayName="$(string.Enable3d)"
+        explainText="$(string.Enable3d_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bEnable3D">
+        <parentCategory ref="EmbeddedContentCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Other Content Settings -->
+
+    <policy name="AdobeWelcomeScreen"
+	    class="Machine"
+	    displayName="$(string.AdobeWelcomeScreen)"
+	    explainText="$(string.AdobeWelcomeScreen_Help)"
+	    presentation="$(presentation.AdobeWelcomeScreen)"
+	    key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cWelcomeScreen"
+	    valueName="bShowWelcomeScreen">
+        <parentCategory ref="OtherCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="DisableUsageTracking"
+        class="Machine"
+        displayName="$(string.DisableUsageTracking)"
+        explainText="$(string.DisableUsageTracking_Help)"
+        presentation="$(presentation.DisableUsageTracking)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bUsageMeasurement">
+        <parentCategory ref="OtherCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="Upsell"
+        class="Machine"
+        displayName="$(string.Upsell)"
+        explainText="$(string.Upsell_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="bAcroSuppressUpsell">
+        <parentCategory ref="OtherCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- bAutoFill -->
+
+    <policy name="ShowMsgAtLaunch"
+        class="Machine"
+        displayName="$(string.ShowMsgAtLaunch)"
+        explainText="$(string.ShowMsgAtLaunch_Help)"
+        presentation="$(presentation.ShowMsgAtLaunch)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cIPM"
+        valueName="bShowMsgAtLaunch">
+        <parentCategory ref="OtherCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="DontShowMsgWhenViewingDoc"
+        class="Machine"
+        displayName="$(string.DontShowMsgWhenViewingDoc)"
+        explainText="$(string.DontShowMsgWhenViewingDoc_Help)"
+        presentation="$(presentation.DontShowMsgWhenViewingDoc)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cIPM"
+        valueName="bDontShowMsgWhenViewingDoc">
+        <parentCategory ref="OtherCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="FipsMode"
+        class="User"
+        displayName="$(string.FipsMode)"
+        explainText="$(string.FipsMode_Help)"
+        key="Software\Adobe\Acrobat Reader\2017\AVGeneral"
+        valueName="bFipsMode">
+        <parentCategory ref="TrustedLocationCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- More Cloud Settings -->
+    <policy name="ToggleFillSign"
+        class="Machine"
+        displayName="$(string.ToggleFillSign)"
+        explainText="$(string.ToggleFillSign_Help)"
+        presentation="$(presentation.ToggleFillSign)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cServices"
+        valueName="bToggleFillSign">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="ToggleSendAndTrack"
+        class="Machine"
+        displayName="$(string.ToggleSendAndTrack)"
+        explainText="$(string.ToggleSendAndTrack_Help)"
+        presentation="$(presentation.ToggleSendAndTrack)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown\cServices"
+        valueName="bToggleSendAndTrack">
+        <parentCategory ref="CloudCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- More Embedded Content Settings -->
+    <policy name="Enable3dContent"
+        class="User"
+        displayName="$(string.3DEnableContent)"
+        explainText="$(string.3DEnableContent_Help)"
+        key="Software\Policies\Adobe\Acrobat Reader\2017\FeatureLockDown"
+        valueName="b3DEnableContent">
+        <parentCategory ref="EmbeddedContentCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="AutoUriDetect"
+        class="User"
+        displayName="$(string.AutoUriDetect)"
+        explainText="$(string.AutoUriDetect_Help)"
+        key="Software\Adobe\Acrobat Reader\2017\AVGeneral"
+        valueName="bAutoUriDetect">
+        <parentCategory ref="EmbeddedContentCategory"/>
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- User: Collab\bEnableRSSFeeds not documented -->
+
+    <policy name="JavaScript"
+	    class="User"
+	    displayName="$(string.JavaScript)"
+	    explainText="$(string.JavaScript_Help)"
+	    presentation="$(presentation.JavaScript)"
+        key="Software\Adobe\Acrobat Reader\2017\JSPrefs"
+	    valueName="bEnableJS">
+        <parentCategory ref="EmbeddedContentCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="Launchfunctionality"
+	    class="User"
+        displayName="$(string.Launchfunctionality)"
+	    explainText="$(string.Launchfunctionality_Help)"
+	    presentation="$(presentation.Launchfunctionality)"
+	    key="Software\Adobe\Acrobat Reader\2017\Originals"
+	    valueName="bAllowOpenFile">
+        <parentCategory ref="EmbeddedContentCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="bDisplayAboutDialog"
+	class="User"
+        displayName="$(string.bDisplayAboutDialog)"
+	 explainText="$(string.bDisplayAboutDialog_Help)"
+	presentation="$(presentation.bDisplayAboutDialog)"
+	key="Software\Adobe\Acrobat Reader\2017\Originals"
+	valueName="bDisplayAboutDialog">
+        <parentCategory ref="EmbeddedContentCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="GreyouttheLaunchfunctionality"
+        class="User"
+        displayName="$(string.GreyouttheLaunchfunctionality)"
+        explainText="$(string.GreyouttheLaunchfunctionality_Help)"
+        presentation="$(presentation.GreyouttheLaunchfunctionality)"
+        key="Software\Adobe\Acrobat Reader\2017\Originals"
+        valueName="bSecureOpenFile">
+        <parentCategory ref="EmbeddedContentCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- More Trust Manager settings -->
+
+    <policy name="LoadSettingsFromURLCust"
+        class="User"
+        displayName="$(string.LoadSettingsFromURLCust)"
+        explainText="$(string.LoadSettingsFromURLCust_Help)"
+        presentation="$(presentation.LoadSettingsFromURLCust)"
+        key="Software\Adobe\Acrobat Reader\2017\Security\cDigSig\cCustomDownload"
+        valueName="bLoadSettingsFromURL">
+        <parentCategory ref="SecurityCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="LoadSettingsFromURLAATL"
+        class="User"
+        displayName="$(string.LoadSettingsFromURLAATL)"
+        explainText="$(string.LoadSettingsFromURLAATL_Help)"
+        presentation="$(presentation.LoadSettingsFromURLAATL)"
+        key="Software\Adobe\Acrobat Reader\2017\Security\cDigSig\cAdobeDownload"
+        valueName="bLoadSettingsFromURL">
+        <parentCategory ref="SecurityCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="LoadSettingsFromURLEUTL"
+        class="User"
+        displayName="$(string.LoadSettingsFromURLEUTL)"
+        explainText="$(string.LoadSettingsFromURLEUTL_Help)"
+        presentation="$(presentation.LoadSettingsFromURLEUTL)"
+        key="Software\Adobe\Acrobat Reader\2017\Security\cDigSig\cEUTLDownload"
+        valueName="bLoadSettingsFromURL">
+        <parentCategory ref="SecurityCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="AskBeforeUpdatingRootCertificates"
+        class="User"
+        displayName="$(string.AskBeforeUpdatingRootCertificates)"
+        explainText="$(string.AskBeforeUpdatingRootCertificates_Help)"
+        presentation="$(presentation.AskBeforeUpdatingRootCertificates)"
+        key="Software\Adobe\Acrobat Reader\2017\Security\cDigSig\cAdobeDownload"
+        valueName="bAskBeforeInstalling">
+        <parentCategory ref="SecurityCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="AskBeforeUpdatingEUCertificates"
+        class="User"
+        displayName="$(string.AskBeforeUpdatingEUCertificates)"
+        explainText="$(string.AskBeforeUpdatingEUCertificates_Help)"
+        presentation="$(presentation.AskBeforeUpdatingEUCertificates)"
+        key="Software\Adobe\Acrobat Reader\2017\Security\cDigSig\cEUTLDownload"
+        valueName="bAskBeforeInstalling">
+        <parentCategory ref="SecurityCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- More Trust Manager > Protected View -->
+    <policy name="ProtectedViewMode"
+        class="User"
+        displayName="$(string.ProtectedViewMode)"
+        explainText="$(string.ProtectedViewMode_Help)"
+        presentation="$(presentation.ProtectedViewMode)"
+        key="Software\Adobe\Acrobat Reader\2017\TrustManager"
+        valueName="iProtectedView">
+        <parentCategory ref="SecurityCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- More Trusted Location Settings -->
+    <policy name="TrustOSTrustedSites"
+        class="User"
+        displayName="$(string.TrustOSTrustedSites)"
+        explainText="$(string.TrustOSTrustedSites_Help)"
+        presentation="$(presentation.TrustOSTrustedSites)"
+        key="Software\Adobe\Acrobat Reader\2017\TrustManager"
+        valueName="bTrustOSTrustedSites">
+        <parentCategory ref="TrustedLocationCategory" />
+        <supportedOn ref="adobe:SUPPORTED_Windows7" />
+        <enabledValue><decimal value="1" /></enabledValue>
+        <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="bShowDMB"
+     class="User"
+     displayName="$(string.bShowDMB)"
+     explainText="$(string.bShowDMB_Help)"
+     presentation="$(presentation.bShowDMB)"
+     key="Software\Adobe\Acrobat Reader\2017\MicrosoftAIP"
+     valueName="bShowDMB">
+     <parentCategory ref="MPIPCategory" />
+     <supportedOn ref="adobe:SUPPORTED_Windows7" />
+     <enabledValue><decimal value="1" /></enabledValue>
+     <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+  </policies>
+</policyDefinitions>
+<!-- Created by module version 2.0.0  -->
