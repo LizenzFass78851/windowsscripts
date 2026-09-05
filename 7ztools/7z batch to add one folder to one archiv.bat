@@ -4,10 +4,10 @@ pushd "%CD%" && CD /D "%~dp0"
 
 SET LINE===================================================
 
-if "%PROCESSOR_ARCHITECTURE%"=="x86"   SET "ZIPEXE=C:\Program Files (x86)\7-Zip\7z.exe"
-if "%PROCESSOR_ARCHITECTURE%"=="AMD64" SET "ZIPEXE=C:\Program Files\7-Zip\7z.exe"
-if "%PROCESSOR_ARCHITECTURE%"=="ARM"   SET "ZIPEXE=C:\Program Files (x86)\7-Zip\7z.exe"
-if "%PROCESSOR_ARCHITECTURE%"=="ARM64" SET "ZIPEXE=C:\Program Files\7-Zip\7z.exe"
+if "%PROCESSOR_ARCHITECTURE%"=="x86"   SET "ZIPEXE=%ProgramFiles(x86)%\7-Zip\7z.exe"
+if "%PROCESSOR_ARCHITECTURE%"=="AMD64" SET "ZIPEXE=%ProgramFiles%\7-Zip\7z.exe"
+if "%PROCESSOR_ARCHITECTURE%"=="ARM"   SET "ZIPEXE=%ProgramFiles(x86)%\7-Zip\7z.exe"
+if "%PROCESSOR_ARCHITECTURE%"=="ARM64" SET "ZIPEXE=%ProgramFiles%\7-Zip\7z.exe"
 
 if not exist "%ZIPEXE%" (
     echo "installed 7-Zip are not found"
