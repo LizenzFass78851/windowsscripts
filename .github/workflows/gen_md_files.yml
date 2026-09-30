@@ -24,8 +24,6 @@ jobs:
 
       - name: clone
         uses: actions/checkout@main
-        with:
-          clean: false
 
       - name: generate
         env:
