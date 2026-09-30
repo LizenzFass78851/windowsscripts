@@ -1,41 +1,53 @@
 #!/bin/bash
-set -e # Beende das Skript bei einem Fehler
+set -euo pipefail
 
-# Voreinstellungen
-#SUCHVERZEICHNIS=
 PATCHTHEFILE=README.md
+TEMPFILE=$(mktemp)
+trap 'rm -f "$TEMPFILE"' EXIT
 
-LINKS=/tmp/$PATCHTHEFILE.txt
-
-# Hole die Links
-if [ -e "$LINKS" ]; then
-  rm "$LINKS"
-fi
-
-find ./ -name '*' -type d -maxdepth 1 \
-  | sed 's#^./##g' \
-  | sed 's# #%20#g' \
-  | sed -e '1d' \
-  | grep -v '.git' \
-  | sort >> $LINKS
-
-
-# Lösche die Datei
-rm $PATCHTHEFILE
-
-
-# Erstelle die Datei
-# Schicht 1
-cat <<EOF | tee $PATCHTHEFILE
+cat <<'EOF' > "$TEMPFILE"
 # Windows Scripts
 
 
 Contains scripts and files for retrofitting certain functions under windows
 
 ## Overview of the scripts and tools:
+
+| Script / tool |
+| --- |
 EOF
 
-# Die Links
-while read line; do
-    echo "- [$(echo $line | sed 's#%20# #g')](./$line)" >> $PATCHTHEFILE
-done < $LINKS
+escape_markdown() {
+  local label=$1
+  label=${label//\\/\\\\}
+  label=${label//\[/\\[}
+  label=${label//\]/\\]}
+  label=${label//|/\\|}
+  printf '%s' "$label"
+}
+
+urlencode_path() {
+  local value=$1 encoded= character hex index
+  local LC_ALL=C
+
+  for ((index = 0; index < ${#value}; index++)); do
+    character=${value:index:1}
+    case "$character" in
+      [a-zA-Z0-9._~-]) encoded+=$character ;;
+      *) printf -v hex '%%%02X' "'$character"; encoded+=$hex ;;
+    esac
+  done
+
+  printf '%s' "$encoded"
+}
+
+find . -mindepth 1 -maxdepth 1 -type d ! -name '.git' ! -name '.github' -print0 \
+  | LC_ALL=C sort -fz \
+  | while IFS= read -r -d '' directory; do
+      name=${directory#./}
+      label=$(escape_markdown "$name")
+      target=$(urlencode_path "$name")
+      printf '| [%s](./%s/) |\n' "$label" "$target" >> "$TEMPFILE"
+    done
+
+mv "$TEMPFILE" "$PATCHTHEFILE"
