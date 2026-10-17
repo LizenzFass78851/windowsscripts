@@ -8,6 +8,7 @@ on:
 #      - '.github/scripts/gen_readme.md.sh'
 #  schedule:
 #    - cron: '20 12 * * *'
+#      timezone: "UTC"
   workflow_dispatch:
 
 env:
